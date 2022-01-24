@@ -115,4 +115,8 @@ export class ListUsersComponent implements OnInit {
     })
   }
 
+    onClick(estudiante: any){
+      this._firebaseService.user = estudiante
+    }
+
 }

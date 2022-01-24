@@ -1,37 +1,21 @@
-<div class="row p-2">
-  <div class="col-md-2">
-    <p>{{estudiante.nombre}} {{estudiante.apellido}}</p>
-  </div>
-  <div class="col-md-2">
-    <p>{{estudiante.correo}}</p>
-  </div>
-  <div class="col-md-2">
-    <p *ngFor="let nameP of estudiante.proyecto">{{nameP[0].nombre}}</p>
-  </div>
-  <div class="col-md-4">
-    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-      <div class="btn-group me-2" role="group" aria-label="First group">
-        <button *ngIf="!isVisible" (click)="showSelect(true)" type="button" class="btn btn-primary">Añadir</button>
-        <div *ngIf="isVisible">
-          <select   (change)="addProject($event, 'update');editLearner(estudiante, 'update')" class="form-select" aria-label="Default select example">
-            <option selected value="">Selecciona proyecto</option>
-            <option *ngFor="let proyect of bifurcation"  [value]="proyect.id">{{proyect.nombre}}</option>
-          </select>
-        </div>
-
-        <button *ngIf="!isVisibleDelete" (click)="showSelectDelete(true)" type="button" class="btn btn-primary">Eliminar</button>
-        <div *ngIf="isVisibleDelete">
-          <select   (change)="addProject($event, 'delete');editLearner(estudiante, 'delete')" class="form-select" aria-label="Default select example">
-            <option selected value="">Selecciona proyecto</option>
-            <option *ngFor="let nameP of estudiante.proyecto"   [value]="nameP[0].id">{{nameP[0].nombre}}</option>
-          </select>
-        </div>
+<td>
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group me-2" role="group" aria-label="First group">
+      <button *ngIf="!isVisible" (click)="showSelect(true)" type="button" class="btn btn-primary">Añadir</button>
+      <div *ngIf="isVisible">
+        <select (change)="addProject($event, 'update');editLearner(estudiante, 'update')" class="form-select" aria-label="Default select example">
+          <option selected value="">Selecciona proyecto</option>
+          <option *ngFor="let proyect of bifurcation" [value]="proyect.id">{{proyect.nombre}}</option>
+        </select>
       </div>
-  </div>
-  </div>
-  <div class="col-md-2">
-    <div class="btn-group" role="group" aria-label="Third group">
-      <button routerLink="/report"type="button" class="btn btn-info" (click)='onClick(estudiante)'>Ver reporte</button>
+
+      <button *ngIf="!isVisibleDelete" (click)="showSelectDelete(true)" type="button" class="btn btn-primary">Eliminar</button>
+      <div *ngIf="isVisibleDelete">
+        <select (change)="addProject($event, 'delete');editLearner(estudiante, 'delete')" class="form-select" aria-label="Default select example">
+          <option selected value="">Selecciona proyecto</option>
+          <option *ngFor="let nameP of estudiante.proyecto" [value]="nameP[0].id">{{nameP[0].nombre}}</option>
+        </select>
+      </div>
     </div>
   </div>
-</div>
+</td>

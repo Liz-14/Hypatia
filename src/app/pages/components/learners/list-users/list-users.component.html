@@ -1,28 +1,27 @@
-<div >
-  <div class="intro vh-100 " style="overflow: scroll;">
-      <div></div>
-    <div class="table-responsive pt-5 ">
-
-      <div class="row bg-dark p-2">
-        <div class="col-md-2">
-          <h5>Nombre</h5>
-        </div>
-        <div class="col-md-2">
-          <h5>Email</h5>
-        </div>
-        <div class="col-md-2">
-          <h5>Proyecto Actual</h5>
-        </div>
-        <div class="col-md-4">
-          <h5>Proyecto</h5>
-        </div>
-        <div class="col-md-2">
-          <h5>Reporte</h5>
-        </div>
-      </div>
-      <div *ngFor="let estudiante of listUsers">
-        <app-user [bifurcation]="proyects" [estudiante]="estudiante"></app-user>
-      </div>
-    </div>
-  </div>
+<div class="table-responsive mt-5 ms-5">
+  <h3 class="m-0 p-2 bg-dark text-center text-white fw-bold">Learners</h3>
+  <table class="table table-hover align-middle">
+    <thead>
+      <tr class="table-active">
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Proyecto Actual</th>
+        <th scope="col">Proyecto</th>
+        <th scope="col">Reporte</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-light text-dark" *ngFor="let estudiante of listUsers">
+        <td scope="row">{{estudiante.nombre}} {{estudiante.apellido}}</td>
+        <td>{{estudiante.correo}}</td>
+        <td><p *ngFor="let nameP of estudiante.proyecto">{{nameP[0].nombre}}</p></td>
+        <td><app-user [bifurcation]="proyects" [estudiante]="estudiante"></app-user></td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Third group">
+            <button routerLink="/report" type="button" class="btn btn-info" (click)='onClick(estudiante)'>Ver reporte</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -1,3 +1,33 @@
-h5{
-    color: #ffffff;
+h3{
+    width: 73.7vw;
+}
+
+@media(max-width:1361px){
+  h3{
+      width: 71.2vw;
+  }
+}
+
+@media(max-width:1281px){
+  h3{
+      width: 70.5vw;
+  }
+}
+
+@media(max-width:897px){
+  h3{
+      width: 87.6vw;
+  }
+}
+
+@media(max-width:670px){
+  h3{
+      width: 108vw;
+  }
+}
+
+@media(max-width:420px){
+  h3{
+      width: 192vw;
+  }
 }

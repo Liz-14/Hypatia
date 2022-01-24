@@ -40,10 +40,4 @@ export class UserComponent implements OnInit {
     this._firebaseService.addUsers(estudiante, name);
   }
 
-  onClick(estudiante: any){
-    this._firebaseService.user = estudiante
-    //this._firebaseService.getCurrentStudent$(estudiante.id)
-    //console.log('estudiante: ', estudiante)
-  }
-
 }
